@@ -6,6 +6,7 @@ Prerequisite:
 A regular Linux desktop computer that has kpartx and mksquashfs installed.
 
 Setup
+
 copy berryboot_conv.sh in a folder of your choice togheter with the Raspberry image file.
 Change the script permission to executable with:
 
