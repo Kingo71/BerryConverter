@@ -14,7 +14,7 @@ chmod 755 berryboot_conv.sh
 
 Usage:
 
-./berryboot_conv.sh <name image to convert> <name converted image>
+./berryboot_conv.sh name_image_to_convert name_converted_image>
   
 The converted image file can be copied to a USB stick and then choosen to be installed in berryboot.
 The converted image can be used also in a local network repository.
