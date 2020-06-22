@@ -10,11 +10,11 @@ Setup
 copy berryboot_conv.sh in a folder of your choice togheter with the Raspberry image file.
 Change the script permission to executable with:
 
-chmod 755 berryboot_conv.sh
+>`chmod 755 berryboot_conv.sh
 
 Usage:
 
-./berryboot_conv.sh name_image_to_convert name_converted_image>
+>./berryboot_conv.sh `<name_image_to_convert>  `<name_converted_image>
   
 The converted image file can be copied to a USB stick and then choosen to be installed in berryboot.
 The converted image can be used also in a local network repository.
