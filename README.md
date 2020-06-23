@@ -3,7 +3,7 @@ Berryboot image conversion script
 
 Prerequisite:
 
-A regular Linux desktop computer that has kpartx and mksquashfs installed.
+A regular Linux desktop computer that has **kpartx** and **mksquashfs** installed.
 
 Setup
 
