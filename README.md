@@ -15,6 +15,10 @@ Change the script permission to executable with:
 Usage:
 
 >./berryboot_conv.sh `<name_image_to_convert>  `<name_converted_image>
+
+Example:
+
+> ./berryboot_conv.sh raspios.img raspios_berry.img
   
 The converted image file can be copied to a USB stick and then choosen to be installed in berryboot.
 The converted image can be used also in a local network repository.
