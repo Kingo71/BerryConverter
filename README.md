@@ -2,7 +2,7 @@
 
 Berryboot image conversion script
 
-Prerequisite:
+Prerequisites:
 
 A regular Linux desktop computer that has **kpartx** and **mksquashfs** installed.
 
@@ -23,3 +23,27 @@ Example:
   
 The converted image file can be copied to a USB stick and then choosen to be installed in berryboot.
 The converted image can be used also in a local network repository.
+
+# BerryConverter GUI  (Beta)
+
+Prerequisites:
+
+A regular Linux desktop computer that has **kpartx** and **mksquashfs** installed along with **Python3**
+
+
+`Setup`
+
+Copy the file berryconv_gui.py in a folder of your choice, open a terminal in the same location and lunch it as below:
+
+`python3 berryconv_gui.py`
+
+1. Use the button "Source IMG" to select the source image to be converted
+2. Use the button "Converted IMG" to select the destination folder and img file name (defaul the source name + "_bb")
+3. Click on "Convert"to start the conversion, the sudo password will be requested in the opened terminal.
+4. wait for the process to finish.
+
+
+
+
+
+

@@ -81,6 +81,9 @@ def convert():
     rcode = rcommand(["sudo", "mksquashfs", "/mnt", converted.get(), "-comp", "lzo", "-e", "lib/modules"])
     rcode = rcommand(["sudo", "umount", "/mnt"])
     rcode = rcommand(["sudo", "kpartx", "-d",  sc.get()])
+    console.insert(INSERT,"\n Conversion completed\n")
+    console.insert(INSERT,"Converted img in:" + converted.get())
+    console.see("end")
     console.config(state="disabled")
     convert.config(state="normal")
 
