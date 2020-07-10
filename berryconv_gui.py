@@ -10,14 +10,13 @@ root.resizable(False, False)
 spath = ""
 dpath = ""
 
-
 def openFile():
     sc.delete(0, END)
     converted.delete(0, END)
     rep = filedialog.askopenfilename(
-    	parent=root,
-    	initialdir='~/',
-    	filetypes=[("IMG", "*.img")])
+        parent=root,
+        initialdir='~/',
+        filetypes=[("IMG", "*.img")])
     spath = rep
     dirpath = rep.split('/')
     imgname = dirpath[-1]
@@ -28,8 +27,8 @@ def openFile():
 
 def convertpath():
     rep = filedialog.askdirectory(
-    	parent=root,
-    	initialdir='~/')
+        parent=root,
+        initialdir='~/')
     dirpath = converted.get().split('/')
     imgname = dirpath[-1]
     converted.delete(0,END)
@@ -39,24 +38,29 @@ def rcommand(param):
     process = subprocess.Popen(param, 
                            stdout=subprocess.PIPE,
                            universal_newlines=True)
-
+    
+    
     while True:
         output = process.stdout.readline()
         if output != "":
+            return_string = output.strip()
             console.insert(INSERT,output.strip() + "\n")
         
         console.see("end")
         root.update()
-        # Do something else
+    
         return_code = process.poll()
+        
         if return_code is not None:
+            
             # Process has finished, read rest of the output 
             for output in process.stdout.readlines():
-                if output != "":
-                    console.insert(INSERT,output.strip() + "\n")
+                if  len(output) > 0:
+                    console.insert(INSERT, output.strip() + "\n")
                     console.see("end")
                     root.update()
-            return output.strip()
+                    
+            return return_code
             
 
 
@@ -64,7 +68,8 @@ def convert():
     console.config(state="normal")
     console.delete(1.0, END)
     convert.config(state="disabled")
-    map_part = (rcommand(["sudo", "kpartx", "-av",  sc.get()])).split()[2]
+    map_part_command = (rcommand(["sudo", "kpartx", "-av",  sc.get()]))
+    map_part = console.get("2.0","2.end").split()[2]
     rcode = rcommand(["sudo", "mount", "/dev/mapper/" + map_part.strip() ,"/mnt"])
     console.insert(INSERT,"Mapping partitions...\n")
     console.see("end")
@@ -107,4 +112,4 @@ convert.grid(columnspan=2, pady=5)
 
 
 
-root.mainloop(), 
+root.mainloop()
