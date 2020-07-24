@@ -1,6 +1,6 @@
 # BerryConverter
 
-Berryboot image conversion script
+Berryboot image conversion script, berryboot converter.
 
 Prerequisites:
 
